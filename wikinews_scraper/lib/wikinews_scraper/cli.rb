@@ -1,0 +1,3 @@
+class WikinewsScraper::CLI
+
+end 
