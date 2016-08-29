@@ -14,4 +14,12 @@ class WikinewsScraper::Scraper
       end 
   end
 
+  def self.scrape_article(url)
+    article = Nokogiri::HTML(open(url))
+    article_headline = article.css('h1.firstHeading').text 
+    article_date = article.css('p .published').text 
+    article_text = article.css('p').children.text
+    binding.pry
+  end 
+
 end 
