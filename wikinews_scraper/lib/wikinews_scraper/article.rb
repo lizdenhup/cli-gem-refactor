@@ -3,7 +3,7 @@ class WikinewsScraper::Article
   
   @@all = []
 
-  def initialize(:title = nil, :link = nil, :summary = nil, :text = nil, :date = nil)
+  def initialize(title = nil, link = nil, summary = nil, text = nil, date = nil)
     @title = title
     @link = link
     @summary = summary 

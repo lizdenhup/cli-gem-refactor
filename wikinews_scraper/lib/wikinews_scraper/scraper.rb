@@ -7,7 +7,7 @@ class WikinewsScraper::Scraper
         title = item.css('.l_title a').text
         link = 'https://en.wikinews.org' + item.css('.l_title a').first.attributes['href'].value
         summary = item.css('.l_summary').first.children.text
-        @@all << Article.new.tap { |a| a.title = title; a.link = link; a.summary = summary}
+        Article.new.tap { |a| a.title = title; a.link = link; a.summary = summary}
       end 
   end 
 
