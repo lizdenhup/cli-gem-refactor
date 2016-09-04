@@ -1,8 +1,6 @@
 # WikinewsScraper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/wikinews_scraper`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a gem for scraping the day's headlines and stories from the open-source news site, Wikinews. 
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Start a new WikinewsScraper session in your terminal by cd'ing into the wikinews_scraper directory. From there, input 'ruby bin/wikinews_scraper' to execute the program from the terminal.
 
 ## Development
 

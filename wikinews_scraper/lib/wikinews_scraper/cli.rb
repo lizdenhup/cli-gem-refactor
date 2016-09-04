@@ -1,5 +1,3 @@
-require "pry"
-
 class WikinewsScraper::CLI
 
   def initialize
