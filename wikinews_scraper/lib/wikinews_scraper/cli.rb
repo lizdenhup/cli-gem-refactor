@@ -33,7 +33,9 @@ class WikinewsScraper::CLI
       if input.to_i.between?(1, 5)
         puts WikinewsScraper::Article.all[input.to_i - 1].title + "\n"
         url = WikinewsScraper::Article.all[input.to_i - 1].link
-        story = WikinewsScraper::Scraper.make_article(url)
+        story = WikinewsScraper::Scraper.new.make_article(url)
+        puts "----"
+        puts story.text + "\n"
       else
         puts "Please try again, invalid input."
         more 

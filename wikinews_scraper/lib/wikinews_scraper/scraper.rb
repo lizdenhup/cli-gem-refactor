@@ -15,6 +15,7 @@ class WikinewsScraper::Scraper
     article_doc = Nokogiri::HTML(open(url))
     date = article_doc.css('p .published').text 
     text = article_doc.css('p').children.text   
+    story = WikinewsScraper::Article.new.tap { |s| s.date = date; s.text = text}
   end 
 
 end 
