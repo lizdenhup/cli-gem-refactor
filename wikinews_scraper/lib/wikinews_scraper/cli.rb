@@ -1,3 +1,5 @@
+require "pry"
+
 class WikinewsScraper::CLI
 
   def initialize
@@ -16,12 +18,10 @@ class WikinewsScraper::CLI
   end
 
   def list
-    WikinewsScraper::Scraper.new.scrape_articles
-    WikinewsScraper::Article.all.each do |article| 
+    WikinewsScraper::Scraper.new.scrape_articles.each do |article| 
       puts article.title.upcase + "\n"
       puts article.summary + "\n"
       puts "--------------"
-      binding.pry 
     end 
     more
   end 

@@ -9,6 +9,7 @@ class WikinewsScraper::Article
     @summary = summary 
     @text = text
     @date = date
+    @@all << self
   end 
 
   def self.all 
