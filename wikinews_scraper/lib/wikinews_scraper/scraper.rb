@@ -14,7 +14,7 @@ class WikinewsScraper::Scraper
   def expand_article(input)
     article = WikinewsScraper::Article.find(input)
     article_doc = Nokogiri::HTML(open(article.link))
-    article[:text] = article_doc.css('p').children.text
+    article.text = article_doc.css('p').children.text
   end 
 
 end 

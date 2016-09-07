@@ -21,8 +21,7 @@ RSpec.describe WikinewsScraper::Article do
     context 'article' do 
       it 'scrapes an individual article from Wikinews' do 
         VCR.use_cassette("candidates_suspend_campaigns_Hong_Kong") do 
-          expect(WikinewsScraper::Scraper.new.expand_article('1')).to start_with("
-            Saturday, September 3, 2016 As the Hong Kong legislative election approaches, six candidates considered")
+          expect(WikinewsScraper::Scraper.new.expand_article('1')).to start_with("Saturday, September 3, 2016 As the Hong Kong legislative election approaches, six candidates considered")
         end
       end 
     end 
