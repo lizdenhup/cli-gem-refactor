@@ -10,8 +10,11 @@ class WikinewsScraper::CLI
     input = gets.strip.upcase
     if input == "Y"
       list
-    else 
+    elsif input == "N"
       puts "Okay, maybe later."
+    else 
+      puts "Invalid input - please try again."
+      welcome 
     end 
   end
 
@@ -29,7 +32,10 @@ class WikinewsScraper::CLI
     puts "Enter a number 1-5 to find out more about a particular story."
     input = gets.strip
       if input.to_i.between?(1, 5)
-        WikinewsScraper::Scraper.expand_article(input)
+        WikinewsScraper::Scraper.new.expand_article(input)
+        puts WikinewsScraper::Article.find(input).title + "\n"
+        puts "----"        
+        puts WikinewsScraper::Article.find(input).text + "\n"
       else
         puts "Please try again, invalid input."
         more 
