@@ -17,11 +17,11 @@ RSpec.describe WikinewsScraper::Article do
 
 
 #####TODO for Sept 7, 2016: fix this test & fine-tune the @make_article method to ensure proper assignment of title, summary is happening
-  describe "#make_article" do 
+  describe "#expand_article" do 
     context 'article' do 
       it 'scrapes an individual article from Wikinews' do 
         VCR.use_cassette("candidates_suspend_campaigns_Hong_Kong") do 
-          expect(WikinewsScraper::Scraper.new.make_article('https://en.wikinews.org/wiki/Candidates_suspend_campaigns_as_Hong_Kong_legislative_election_approaches')).to start_with("
+          expect(WikinewsScraper::Scraper.new.expand_article('1')).to start_with("
             Saturday, September 3, 2016 As the Hong Kong legislative election approaches, six candidates considered")
         end
       end 

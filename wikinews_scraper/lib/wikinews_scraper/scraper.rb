@@ -11,13 +11,11 @@ class WikinewsScraper::Scraper
       end 
   end 
 
-  def make_article(url)
-    article_doc = Nokogiri::HTML(open(url))
-    date = article_doc.css('p .published').text 
-    text = article_doc.css('p').children.text   
-    story = WikinewsScraper::Article.new.tap { |s| s.date = date; s.text = text}
+  def expand_article(input)
+    article = WikinewsScraper::Article.find(input)
+    article_doc = Nokogiri::HTML(open(article.link))
+    article[:text] = article_doc.css('p').children.text
   end 
 
 end 
-
 
