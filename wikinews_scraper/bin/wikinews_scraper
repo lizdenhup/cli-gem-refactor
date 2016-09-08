@@ -2,4 +2,4 @@
 
 require_relative '../lib/wikinews_scraper'
 
-WikinewsScraper::CLI.new
+WikinewsScraper::CLI.new.welcome

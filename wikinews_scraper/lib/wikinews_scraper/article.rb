@@ -3,12 +3,18 @@ class WikinewsScraper::Article
   
   @@all = []
 
-  def initialize(title = nil, link = nil, summary = nil, text = nil)
-    @title = title
-    @link = link
-    @summary = summary 
-    @text = text
-    @@all << self
+  def initialize(params = {})
+    @title = params[:title]
+    @link = params[:link]
+    @summary = params[:summary]
+  end 
+
+  def save
+    @@all << self 
+  end 
+
+  def self.create(params = {}) 
+    self.new(params).save
   end 
 
   def self.all 
